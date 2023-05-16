@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do-App</title>
+
+    <!-- linkear el stylesheet y el archivo de js -->
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="content">
+      <h1>TO DO LIST</h1>
+      <div class="filters">
+        <button class="filter__option">All</button>
+        <button class="filter__option">Active</button>
+        <button class="filter__option">Completed</button>
+      </div>
+      <form>
+        <input type="text" />
+        <button type="submit">Add</button>
+        <!-- type submit porque esta dentro de una etiqueta form -->
+      </form>
+      <div class="tasks"></div>
+    </div>
+  </body>
+</html>

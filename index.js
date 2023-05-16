@@ -47,5 +47,28 @@ function renderList() {
   });
 }
 
+/* declaramos constante cuyo valor es el todo lo que está dentro de la etiqueta "form" de html */
+const formNode = document.querySelector("#add-task");
+/* añadimos un evento que escucha al botón submit del formulario y ejecuta una función */
+/* a la función del event listener se le llama por defecto event */
+formNode.addEventListener("submit", function (event) {
+  /* se pone preventDefault para que al rellenar el formulario no me refresque la página porque por defecto se refresca */
+  event.preventDefault();
+  /* para acceder al valor del input */ /* duda: no entiendo el add-task ni el description, si add-tas es un id porque no se pone un # */ const description =
+    document.forms["add-task"]["description"].value;
+  /* creamos constante que lleve el id, description y isCompleted de cada tarea nueva que escribamos */
+  const newTask = {
+    /* utilizamos Date.getmilliseconds para crear id únicos */
+    id: new Date().getTime(),
+    description,
+    /* para que por defecto salga como sin completar */
+    isCompleted: false,
+  };
+
+  /* hacemos esto al igual que antes para pintar en pantalla la nueva tarea */
+  const taskHtml = buildTask(newTask);
+  taskNode.append(taskHtml);
+  formNode.reset();
+});
 /* llama a la función renderList */
 renderList();

@@ -14,9 +14,14 @@
     <div class="content">
       <h1>TO DO LIST</h1>
       <div class="filters">
-        <button class="filter__option">All</button>
-        <button class="filter__option">Active</button>
-        <button class="filter__option">Completed</button>
+        <button
+          class="filter__option filter__option--selected"
+          data-filter="all"
+        >
+          All
+        </button>
+        <button class="filter__option data-filter="active"">Active</button>
+        <button class="filter__option data-filter="completed"">Completed</button>
       </div>
       <form class="add" id="add-task">
         <input

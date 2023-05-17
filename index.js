@@ -35,11 +35,26 @@ function buildTask(task) {
 }
 
 /* creamos una función que pinta en pantalla lo creado en la función anterior */
-function renderList() {
+function renderList(filterToApply) {
+  // filterToApply puede ser active, completed, all
   /* crea una constante que selecciona el id del contenedor de tareas */
   const taskNode = document.querySelector("#task-list");
   /* por cada elemento del array se ejecuta una función con el parámetro tarea, que su valor es el de los objetos del array, un id, una descripcion y un booleano */
-  testData.forEach(function (task) {
+  /* esto se usa para limpiar todas las tareas al cambiar de un filtro a otro y que no se vayan acumulando */
+  tasksNode.innerHTML = "";
+
+  /* me creo una nueva variable que almacena las tareas que se van a mostrar y solo esas, es una variable que puedo modificar */
+  let tasksToShow = testData;
+
+  /* active es el data-filter=active del html */
+  if (filterToApply === "active") {
+    /* la funcion .filter funciona igual que el forEach, hace un recorrido del array y si devuelve verdadero se mete en un nuevo array y se devuelve falso no se mete en ninguno. Si inguno se cumple devuelve un array vacío. */
+    tasksToShow = testData.filter(function (task) {
+      return !task.isCompleted;
+    });
+  }
+
+  tasksToShow.forEach(function (task) {
     /* se declara una constante cuyo valor es la función anterior (la estructura del checkbox) para poder pintar en pantalla */
     const taskHtml = buildTask(task);
     /* pinta en el contenedor de tareas del html la tarea (taskHtml) */

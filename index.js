@@ -2,17 +2,17 @@
 const testData = [
   {
     id: 10 /* duda */,
-    description: "Hacer la compra",
+    description: "Prepare a presentation for work",
     isCompleted: false,
   },
   {
     id: 2,
-    description: "Hacer la cama",
+    description: "Exercise",
     isCompleted: false,
   },
   {
     id: 28,
-    description: "Hacer el proyecto about me",
+    description: "Buy bread at the supermarket",
     isCompleted: true,
   },
 ];
@@ -20,13 +20,13 @@ const testData = [
 function buildTask(task, includeDeleteButton) {
   const taskContainer = document.createElement("div");
   taskContainer.className = "task__task";
-  taskContainer.innerHTML = `<input type="checkbox" ${
+  taskContainer.innerHTML = `<input type="checkbox" class="checkbox" ${
     task.isCompleted ? "checked" : ""
   } />${task.description}`;
   console.log(includeDeleteButton);
   if (includeDeleteButton) {
     taskContainer.innerHTML +=
-      '<button type="button" class="delete">Borrar</button>';
+      '<button type="button" class="delete">Delete</button>';
 
     const deleteNode = taskContainer.querySelector('[type="button"]');
     deleteNode.addEventListener("click", function () {

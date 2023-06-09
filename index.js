@@ -84,6 +84,12 @@ filterButtons.forEach(function (filterButton) {
       .querySelector(`.${filterActiveClass}`)
       .classList.remove(filterActiveClass);
     this.classList.add(filterActiveClass);
+
+    if (filterToApply === "completed") {
+      document.querySelector("#add-task").classList.add("hidden");
+    } else {
+      document.querySelector("#add-task").classList.remove("hidden");
+    }
   });
 });
 

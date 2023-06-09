@@ -7,7 +7,7 @@
     <title>To-do-App</title>
 
     <!-- linkear el stylesheet y el archivo de js -->
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./style.css" />
     <script src="index.js" defer></script>
   </head>
   <body>
@@ -20,8 +20,10 @@
         >
           All
         </button>
-        <button class="filter__option data-filter="active"">Active</button>
-        <button class="filter__option data-filter="completed"">Completed</button>
+        <button class="filter__option" data-filter="active">Active</button>
+        <button class="filter__option" data-filter="completed">
+          Completed
+        </button>
       </div>
       <form class="add" id="add-task">
         <input
@@ -30,7 +32,7 @@
           class="add__input"
           name="description"
         />
-        <button type="submit">Add</button>
+        <button type="submit" class="add__button">Add</button>
         <!-- type submit porque esta dentro de una etiqueta form -->
       </form>
       <div class="tasks" id="task-list"></div>

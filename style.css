@@ -1,0 +1,65 @@
+.content {
+  padding: 20px;
+  max-width: 608px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add {
+  display: flex;
+  gap: 20px;
+}
+
+.add__input {
+  border: 1px solid #ebebeb;
+  border-radius: 4px;
+  padding: 8px;
+  flex-grow: 1;
+}
+
+.add__button {
+  background: #2f80ed;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.filter__option {
+  border: none;
+  background-color: transparent;
+  padding: 12px 20px;
+  position: relative;
+}
+
+.filter__option:hover {
+  background-color: #eee;
+}
+
+.filter__option--selected::after {
+  height: 2px;
+  content: "";
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background: #2f80ed;
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}

@@ -60,6 +60,7 @@ formNode.addEventListener("submit", function (event) {
     isCompleted: false,
   };
 
+  testData.push(newTask);
   const taskHtml = buildTask(newTask);
   const tasksNode = document.querySelector("#task-list");
   tasksNode.append(taskHtml);
@@ -83,12 +84,6 @@ filterButtons.forEach(function (filterButton) {
       .querySelector(`.${filterActiveClass}`)
       .classList.remove(filterActiveClass);
     this.classList.add(filterActiveClass);
-
-    if (filterToApply === "completed") {
-      document.querySelector("#add-task").classList.add("hidden");
-    } else {
-      document.querySelector("#add-task").classList.remove("hidden");
-    }
   });
 });
 
